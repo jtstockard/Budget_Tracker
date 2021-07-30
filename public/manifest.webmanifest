@@ -3,13 +3,13 @@
   "name": "PWA Budget Tracker",
   "icons": [
     {
-      "src": "assets/img/piggy-bank-96x96.png",
-      "sizes": "96x96",
+      "src": "public/icons/icon-192x192.png",
+      "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "assets/img/piggy-bank-192x192.png",
-      "sizes": "192x192",
+      "src": "public/icons/icon-512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
