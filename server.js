@@ -14,9 +14,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
-app.use(require("./routes/api.js"));
-
-let MONGODB_URI = process.env.MONGODB_CONNECTION || `mongodb://localhost/transaction`;
 
 mongoose.connect(MONGODB_URI || "mongodb://localhost/transaction", {
   useNewUrlParser: true,
@@ -24,9 +21,8 @@ mongoose.connect(MONGODB_URI || "mongodb://localhost/transaction", {
   useCreateIndex: true,
   useFindAndModify: false,
 });
+app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
   console.log(`App running on http://localhost:${PORT}`);
 });
-
-// routes
