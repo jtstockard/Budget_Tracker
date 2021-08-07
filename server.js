@@ -15,6 +15,8 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+let MONGODB_URI = process.env.MONGODB_CONNECTION || `mongodb://localhost/transaction`;
+
 mongoose.connect(MONGODB_URI || "mongodb://localhost/transaction", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -26,3 +28,5 @@ app.use(require("./routes/api.js"));
 app.listen(PORT, () => {
   console.log(`App running on http://localhost:${PORT}`);
 });
+
+// routes
